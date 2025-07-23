@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link-Archive</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/3.3.2/tailwind.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <style>
+            section::-webkit-scrollbar {
+                display: none;
+            }
+            @media (max-width: 600px) {
+                main {
+                    padding: 0 !important;
+                }
+                p{
+                    font-size: 0.875rem !important;
+                }
+                section {
+                    padding: 0.5rem !important;
+                    max-width: 98vw !important;
+                }
+                section:first-child{
+                    margin: 0;
+                }
+                h1 {
+                    font-size: 1.5rem !important;
+                }
+                li{
+                    overflow: hidden !important;
+                }
+                li p {
+                    font-size: 0.775rem !important;
+                }
+                li h5{
+                    font-size: 1.125rem !important;
+                }
+                #add-link input, #add-link button, #search {
+                    font-size: 0.95rem !important;
+                    padding: 0.5rem !important;
+                }
+                #link-list li {
+                    flex-direction: column !important;
+                    align-items: flex-start !important;
+                    gap: 0.5rem !important;
+                }
+                #link-list li div.flex.gap-2 {
+                    width: 100%;
+                    justify-content: flex-start;
+                }
+                #link-list li button {
+                    width: 100%;
+                    margin-bottom: 0.25rem;
+                }
+                .h-96 {
+                    height: 60vh !important;
+                }
+            }
+    </style>
+</head>
+<body>
+    <main class="m-auto w-screen h-screen bg-[url(logo/premium_photo-1667761637876-e704c906927d.jpg)] bg-cover bg-center overflow-hidden flex flex-col items-center ">
+        <section class="mt-10 mb-4 le">
+            <h1 class="font-['MedievalSharp',serif] text-3xl text-center font-semibold tracking-wide text-shadow-[5px_5px_15px_rgba(0,0,0,0.9)] mb-4">Link-Archive</h1>
+            <p class="font-['MedievalSharp',serif] text-xl text-center font-medium tracking-wide text-shadow-[5px_5px_15px_rgba(0,0,0,0.9)]">Welcome to Link-Archive! Discover, save, and manage your favorite links with ease.</p>
+        </section>
+        <section class="bg-[#f5e6c5] p-4 rounded-lg shadow-md flex flex-col gap-3 items-center w-full max-w-2xl mx-auto">
+            <form id="add-link" class="flex flex-col gap-3 w-full">
+                <input name="name" id="name" type="text" class="block bg-[#f9ecd7] border-2 border-[#c2a477] rounded-lg p-2 w-full text-black placeholder-[#b89b6a] focus:border-[#a67c52]" placeholder="Link Name">
+                <div class="flex gap-2 w-full">
+                <input name="url" id="url" type="url" class="bg-[#f9ecd7] border-2 border-[#c2a477] rounded-lg p-2 flex-1 text-black placeholder-[#b89b6a] focus:border-[#a67c52]" placeholder="Link URL">
+                <button class="bg-[#a67c52] text-[#fff8e1] font-bold px-4 py-2 rounded-lg hover:bg-[#8b6f47] transition border-2 border-black">Add Link</button>
+                </div>
+            </form>
+        </section>
+        <section class="bg-[#f5e6c5] p-4 rounded-lg shadow-md flex flex-col gap-3 items-center w-full max-w-2xl mx-auto mt-4">
+            <input type="search" name="search" id="search" class="bg-[#f9ecd7] border-2 border-[#c2a477] rounded-lg p-2 w-full text-black placeholder-[#b89b6a] focus:border-[#a67c52]" placeholder="Search Links">
+        </section>
+        <section class="bg-[#f5e6c5] p-4 rounded-lg shadow-md flex flex-col gap-3 items-center w-full max-w-2xl mx-auto mt-4 overflow-y-scroll h-96" style="scrollbar-width: none; -ms-overflow-style: none;">
+            <ul class="list-none w-full" id="link-list">
+                
+            </ul>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
